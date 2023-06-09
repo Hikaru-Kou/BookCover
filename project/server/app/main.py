@@ -23,6 +23,7 @@ async def get_process_data(name: str,vert: int,hori: int,title: str):
     processer.read_img(name)
 
     img = processer.process_line(vert,hori)
+    img = processer.write_title(title)
 
     cv2.imwrite(today + ".jpg", img)
     return {"message": "加工が完了しました。"}

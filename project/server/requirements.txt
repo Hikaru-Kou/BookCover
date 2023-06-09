@@ -5,9 +5,11 @@ uvicorn
 #basic
 pip
 pandas
+numpy
 
 # computer vision
 opencv-python
+pillow
 
 #mysqlconnector
 sqlalchemy

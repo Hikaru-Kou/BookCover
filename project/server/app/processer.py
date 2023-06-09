@@ -1,6 +1,6 @@
+import numpy as np
 import cv2
-
-import datetime
+from PIL import Image, ImageDraw, ImageFont
 
 
 class processer():
@@ -32,3 +32,22 @@ class processer():
         cv2.line(self.img,(100,1600), (1600, 1600), (0, 0, 0), thickness=2)
 
         return self.img
+    
+    def write_title(self,title):
+        writer_function = writer_function.writer_function()
+
+        #img = np.full((200,400,3), (160,160,160), dtype=np.uint8)
+
+        # 独自関数で日本語テキストを描写する
+        text = title
+        x, y = 200,100
+        fontPIL = "fonts/DArielUnicode.ttf"
+        size = 40
+        colorBGR = (255,0,0) # cv2.putText()と同じく、BGRの順で定義
+
+        self.img = writer_function.cv2_putText_1(img = self.img,
+                            text = text,
+                            org = (x,y),
+                            fontFace = fontPIL,
+                            fontScale = size,
+                            color = colorBGR)
